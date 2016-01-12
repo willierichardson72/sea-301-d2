@@ -1,5 +1,6 @@
-// TODO: Wrap the entire contents of this file in an IIFE.
+// Done': Wrap the entire contents of this file in an IIFE.
 // Pass in to the IIFE a module, upon which objects can be attached for later access.
+(function (module) {
 function Article (opts) {
   this.author = opts.author;
   this.authorUrl = opts.authorUrl;
@@ -9,8 +10,9 @@ function Article (opts) {
   this.publishedOn = opts.publishedOn;
 }
 
-Article.all = [];
 
+Article.all = [];
+console.log('here1')
 Article.prototype.toHtml = function() {
   var template = Handlebars.compile($('#article-template').text());
 
@@ -38,17 +40,18 @@ Article.loadAll = function(rawData) {
 
 // This function will retrieve the data from either a local or remote source,
 // and process it, then hand off control to the View.
-// TODO: Refactor this function, so it accepts an argument of a callback function (likely a view function)
+// DONE: Refactor this function, so it accepts an argument of a callback function (likely a view function)
 // to execute once the loading of articles is done.
-Article.fetchAll = function() {
+
+Article.fetchAll = function(callback) {
   if (localStorage.rawData) {
     Article.loadAll(JSON.parse(localStorage.rawData));
-    articleView.initIndexPage();
+    callback();
   } else {
     $.getJSON('/data/hackerIpsum.json', function(rawData) {
       Article.loadAll(rawData);
       localStorage.rawData = JSON.stringify(rawData); // Cache the json, so we don't need to request it next time.
-      articleView.initIndexPage();
+      callback();
     });
   }
 };
@@ -56,10 +59,12 @@ Article.fetchAll = function() {
 // TODO: Chain together a `map` and a `reduce` call to get a rough count of all words in all articles.
 Article.numWordsAll = function() {
   return Article.all.map(function(article) {
-    return // Get the total number of words in this article
-  })
-  .reduce(function(a, b) {
-    return // Sum up all the values in the collection
+    var words = article.body.split(' ');
+    return words.length;
+  }).reduce(function(a, b) {
+    return a+b
+    console.log(a+b)
+    // Sum up all the values in the collection
   })
 };
 
@@ -77,3 +82,6 @@ Article.numWordsByAuthor = function() {
     }
   })
 };
+module.Article = Article;
+})(window);
+console.log(Article.all)

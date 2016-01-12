@@ -102,6 +102,7 @@
   };
 
   articleView.initIndexPage = function() {
+    console.log(Article.all)
     Article.all.forEach(function(a){
       $('#articles').append(a.toHtml())
     });
