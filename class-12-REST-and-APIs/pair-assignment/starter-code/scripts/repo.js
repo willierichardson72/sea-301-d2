@@ -6,6 +6,17 @@
   repos.requestRepos = function(callback) {
     // TODO: How would you like to fetch your repos? Don't forget to call the callback.
 
+    //fetch repo's with ajax - lst requirement
+    //write a success function to do something - 2nd requirement
+    var qs= '?per_page=100&sort=updated';
+
+    $.get('/github/users/willierichardson72/repos' + qs)
+    .done(function(data, message, xhr) {
+      console.log('my data - ' + data);
+      repos.all = data;
+    })
+    .done(callback);
+
   };
 
   // DONE: Model method that filters the full collection for repos with a particular attribute.

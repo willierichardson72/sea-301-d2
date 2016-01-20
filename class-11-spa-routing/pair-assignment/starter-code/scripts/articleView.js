@@ -24,7 +24,7 @@
 
   articleView.handleAuthorFilter = function() {
     $('#author-filter').on('change', function() {
-      if ($(this).val()) {
+      if ($(this).val()) {d
         $('article').hide();
         $('article[data-author="' + $(this).val() + '"]').fadeIn();
       } else {
@@ -55,7 +55,7 @@
   //     $('.tab-content').hide();
   //     $('#' + $(this).data('content')).fadeIn();
   //   });
-  // 
+  //
   //   $('.main-nav .tab:first').click();
   // };
 
