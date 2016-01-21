@@ -1,7 +1,12 @@
-# Assignment for Class 13 -  Production Deployment
+# Class 13 -  Production Deployment
 
-Ready to share what you've made with the world? Yes!
+## Class videos
+ - [Part 1 of 4]()
+ - [Part 2 of 4]()
+ - [Part 3 of 4]()
+ - [Part 4 of 4]()
 
+<<<<<<< HEAD
 Then you need to push your code to a web server accessible to the whole Internet. This is your "production environment".
 
 We'll be using Heroku as our production server. Heroku is a "Platform as a Service": your code is plugged in to pre-configured servers, and is started up for the world to access.
@@ -27,3 +32,6 @@ We'll be using Heroku as our production server. Heroku is a "Platform as a Servi
   - [Part 4 of 4]()
 
  ## Helpful Resources
+=======
+## Helpful Resources
+>>>>>>> f262efbfebfbae8cbfe31a2aff4391dd2d2ebdd2

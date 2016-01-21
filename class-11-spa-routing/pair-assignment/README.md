@@ -15,13 +15,21 @@ If, when you run "node server.js", you get "...cannot find ..." errors on the co
     NODE_PATH='/usr/local/lib/node_modules/'
     export NODE_PATH
 
+<<<<<<< HEAD
 in one of your shell start-up scripts. If you don't know what this means, search the internet for "bash init script" and "unix environment variables" and do your due diligence in reading. If, after making a solid effort to understand them, you're still stuck, ask for help, but be prepared to explain what web pages you read, and what you tried to do in your terminal.
+=======
+in one of your shell start-up scripts (.bash_profile or .profile in bash, depending on your development platform). If you don't know what this means, search the internet for "bash init script" and "unix environment variables" and do your due diligence in reading. If, after making a solid effort to understand them, you're still stuck, ask for help, but be prepared to explain what web pages you read, and what you tried to do in your terminal.
+>>>>>>> f262efbfebfbae8cbfe31a2aff4391dd2d2ebdd2
 
 If you still get errors, you may also need to install the Node packages "express" and "express-request-proxy". Install them globally as root:
 
     $ sudo npm install -g express
   
+<<<<<<< HEAD
     $ sudo npm install -g experess-request-proxy
+=======
+    $ sudo npm install -g express-request-proxy
+>>>>>>> f262efbfebfbae8cbfe31a2aff4391dd2d2ebdd2
 
 If you're still stuck, ask for help in lab or on Slack.
 

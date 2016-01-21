@@ -6,6 +6,7 @@
   repos.requestRepos = function(callback) {
     // TODO: How would you like to fetch your repos? Don't forget to call the callback.
 
+<<<<<<< HEAD
     //fetch repo's with ajax - lst requirement
     //write a success function to do something - 2nd requirement
     var qs= '?per_page=100&sort=updated';
@@ -17,6 +18,8 @@
     })
     .done(callback);
 
+=======
+>>>>>>> f262efbfebfbae8cbfe31a2aff4391dd2d2ebdd2
   };
 
   // DONE: Model method that filters the full collection for repos with a particular attribute.
